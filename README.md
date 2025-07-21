@@ -119,7 +119,7 @@ JWT_KEY=
 1. Copie o código para um arquivo `.php`, como `setup.php`.
 2. Execute com PHP:
    ```bash
-   php setup.php
+   php script.php
    ```
 3. A estrutura será criada no diretório onde o script for executado.
 
