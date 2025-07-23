@@ -13,6 +13,7 @@ src/
 ├── assets/
 │   ├── css/
 │   └── img/
+│   └── classes/
 ├── data/
 ├── pages/
 └── scripts/
@@ -22,6 +23,7 @@ Além disso, os seguintes arquivos são gerados com conteúdo pré-definido:
 
 - `src/assets/css/index.css`
 - `src/data/DB_Config.php`
+- `src/classes/Autoload.php`
 - `index.php` (na raiz)
 - `.env` (na raiz)
 - `.gitignore` (na raiz)
@@ -54,7 +56,8 @@ $paths = array(
     'src/assets/img',
     'src/data',
     'src/pages',
-    'src/scripts'
+    'src/scripts',
+    'src/classes',
 );
 ```
 
@@ -67,7 +70,7 @@ Os arquivos são criados com conteúdo base:
 - **index.php**: Estrutura HTML com link para o CSS criado.
 - **.env**: Variáveis de ambiente para configurar banco de dados e chaves de segurança.
 - **.gitignore**: Ignora arquivos sensíveis como `.env`, `log`, `tmp`, e pastas comuns (`node_modules`, `vendor`).
-
+- **Autoload.php**: carrega automaticamente arquivos de classes PHP
 ---
 
 ## 📌 Exemplo de conteúdo criado
