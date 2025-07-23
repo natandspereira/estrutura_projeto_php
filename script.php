@@ -19,7 +19,8 @@ $paths = array(
         'src/assets/img',
         'src/data',
         'src/pages',
-        'src/scripts'
+        'src/scripts',
+        'src/classes'
     );
 
 foreach($paths as $path){
@@ -53,9 +54,25 @@ if(\$_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 ?>
 DBCONFIG;
+$autoloadContenT = 
+<<<AUTOLOAD
+<?php
+spl_autoload_register(function (\$className) {
+    \$file = 'classes/' . \$className . '.class.php';
+    
+    if (file_exists(\$file)) {
+        include \$file;
+    } else {
+        throw new Exception("Arquivo para a classe \$className não encontrado em \$file");
+    }
+});
+?>
+
+AUTOLOAD;
 $files = array(
  'src/assets/css/Index.css' => "$cssContent",
- 'src/data/DB_Config.php' => "$dbConfigContent"
+ 'src/data/DB_Config.php' => "$dbConfigContent",
+ 'src/classes/Autoload.php' => "$autoloadContenT"
 );
 
 foreach($files as $file => $content){
@@ -81,7 +98,7 @@ $indexContent =
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- LINK CSS  -->
-    <link rel="stylesheet" href="./src/assets/css/index.css"> 
+    <link rel="stylesheet" href="./src/assets/css/Index.css"> 
     </head>
     <body>
             
